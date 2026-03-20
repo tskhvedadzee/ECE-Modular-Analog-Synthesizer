@@ -24,3 +24,13 @@ This project demonstrates a basic sequential LED chaser using a 555 timer IC and
 - Switch – SPDT or rotary switch to select reset step (3, 4, or 5)
 - Breadboard and jumper wires – for prototyping
 - Power supply (5V–9V) – suitable for 555 timer and CD4017BE
+
+
+
+
+// turns out To create a 5-step cycle (length 5) using a CD4017 decade counter with a 555 timer, you do not put the reset pin (Pin 15) to ground permanently. 
+1. Clock Input: Connect the 555 timer output (Pin 3) to the 4017 clock input (Pin 14).
+2. Reset Pin (Pin 15): Connect this pin to the Q5 output (Pin 1). 
+        * How it works: The 4017 counts Q0, Q1, Q2, Q3, Q4, Q5... As soon as the count reaches 5 (Q5), the reset pin is activated, immediately resetting the count back to Q0. This creates a cycle of 5 (Q0-Q4).
+3. Clock Inhibit (Pin 13): Ground this pin. 
+4. Power: Connect VDD (Pin 16) to VCC and VSS (Pin 8) to ground
