@@ -117,7 +117,8 @@ The schematic includes an LTspice simulation setup:
 V3 (audio): SINE(0 10 300 0 0 0 30)   — 10V amplitude, 300 Hz, 30° phase offset
 V4 (CV):    4V DC
 ```
-Probe `Audio_Out` to observe the amplified output. Sweep V4 from 0 to 4V to observe gain variation.
+Probe `Audio_Out` to observe the amplified output. Sweep V4 from 0 to 4V to observe gain 
+variation.
 
 ---
 
