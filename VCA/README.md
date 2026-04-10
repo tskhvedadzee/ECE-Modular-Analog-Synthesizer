@@ -1,6 +1,5 @@
-# Differential Pair VCA
-A discrete voltage-controlled amplifier based on a matched NPN differential pair (Q1/Q2), 
-suitable for audio and modular synthesizer applications. Operates on ±15V dual supply.
+## Voltage Controlled Amplifier (VCA) — Differential Pair
+A discrete voltage-controlled amplifier based on a matched NPN differential pair.
 
 ---
 
@@ -8,8 +7,9 @@ suitable for audio and modular synthesizer applications. Operates on ±15V dual 
 This circuit uses the classic long-tailed pair topology: two matched transistors share a common 
 emitter tail whose current is set by the CV path. Because gain is proportional to tail current, 
 the audio signal at Q1's base is amplified by an amount determined by the control voltage. 
-A differential output amplifier (U3) rejects common-mode noise and provides a single-ended output.
-
+A differential output amplifier (U3) rejects common-mode noise and provides a single-ended output,
+and cancels the DC shift that occurs with gain changes — preventing thumps or clicks when the CV 
+changes rapidly.
 ---
 
 ## Schematic Summary
@@ -64,27 +64,9 @@ CV increases toward +4V.
 
 U3 is a classic differential amplifier:
 
-```
-Av = R8 / R6 = 100k / 15k ≈ 6.67 (≈ +16.5 dB)
-```
-
 R6/R7 and R8/R9 must be matched in ratio (they are here). This stage subtracts the two 
 collector voltages, rejecting any common-mode noise picked up in the gain cell, and delivers a 
 clean single-ended output.
-
----
-
-## Gain Law (approximate)
-
-The incremental transconductance of a BJT is:
-
-```
-gm = Ic / VT     (VT ≈ 26 mV at room temperature)
-```
-
-Where Ic is the tail current divided between Q1 and Q2. Because gm is proportional to Ic, 
-and Ic is proportional to CV, the gain tracks CV linearly in this small-signal regime. 
-For an exponential (dB-linear) response, replace R12/R10/R11 with an exponential converter cell.
 
 ---
 
@@ -108,20 +90,6 @@ nonlinear — only do this intentionally (e.g. for waveshaping effects).
 
 ---
 
-## Simulation
-
-The schematic includes an LTspice simulation setup:
-
-```
-.tran 0 0.1 0 1
-V3 (audio): SINE(0 10 300 0 0 0 30)   — 10V amplitude, 300 Hz, 30° phase offset
-V4 (CV):    4V DC
-```
-Probe `Audio_Out` to observe the amplified output. Sweep V4 from 0 to 4V to observe gain 
-variation.
-
----
-
 ## Modifications
 
 | Goal | Change |
@@ -133,3 +101,9 @@ variation.
 | Stereo VCA | Mirror the entire Q1/Q2/U3 section; share the CV path |
 
 ---
+
+## Reference
+
+> Ethan Winer, *"You Can DIY! Building a Guitar-Controlled Synthesizer: VCA & VCF"*, audioXpress, 
+    August 2022.
+> http://audioxpress.com/page/audioXpress-Supplementary-Material.html
