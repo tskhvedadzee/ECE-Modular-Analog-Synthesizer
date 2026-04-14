@@ -6,8 +6,12 @@ Folder (https://www.elby-designs.com/webtek/cgs/cgs/cgs52/cgs52_folder.html) des
 ## What It Does
 
 ```
-A wavefolder adds harmonic complexity to a signal by "folding" the waveform back on itself whenever it exceeds a threshold, rather than clipping it flat. The effect is similar in character to the Serge Wave Multiplier — feeding a plain sine or triangle wave in produces a harmonically rich output that can be swept for filter-like timbral changes.
-It must be fed a triangle or sine wave to function correctly. Sawtooth and square waves won't fold properly because the fold points require a continuously varying input.
+A wavefolder adds harmonic complexity to a signal by "folding" the waveform back on itself 
+whenever it exceeds a threshold, rather than clipping it flat. Feed it a plain sine or triangle 
+wave and it outputs a harmonically rich, complex sound — similar to the Serge Wave Multiplier, 
+with a tonal character that can be swept like a filter.
+It must be fed a triangle or sine wave to function correctly. Sawtooth and square waves won't fold 
+properly because the fold points require a continuously varying input.
 The module has two outputs:
     - Folded output — the waveshaped signal, buffered and amplified back to synthesizer levels.
     - Pulse output — a comparator output derived from the transistor stage, producing a pulse
