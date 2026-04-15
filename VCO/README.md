@@ -1,7 +1,7 @@
 # DIY Synthesizer VCO — Exponential Voltage Controlled Oscillator
 
 A 1V/octave analogue **Voltage Controlled Oscillator (VCO)** module, based on the design from 
-the [DIY Synth Series Part 1](https://www.allaboutcircuits.com/projects/diy-synth-series-exponential-vco/). 
+the [DIY Synth Series Part 1](https://www.allaboutcircuits.com/projects/diy-synth-series-vco/). 
 Simulated in LTspice, producing simultaneous **triangle** and **square** wave outputs.
 
 ---
@@ -118,6 +118,6 @@ A dual supply is required (+9V / 0V / −9V). Options:
 ## Reference
 
 > Robin Mitchell, *"DIY Synth Series Part 1 — The Exponential VCO"*, All About Circuits, August 8, 2016.
-> https://www.allaboutcircuits.com/projects/diy-synth-series-exponential-vco/
+> https://www.allaboutcircuits.com/projects/diy-synth-series-vco/
 
 ---
